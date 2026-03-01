@@ -1,15 +1,20 @@
-/* Configuraciones Globales */
+/* --- CONFIGURACIONES GLOBALES --- */
 :root {
     --emerald-dark: #064e3b;
     --emerald-light: #059669;
     --gold: #d97706;
     --red-wedding: #991b1b;
+    --bg-color: #fdfbf7;
+}
+
+body {
+    background-color: var(--bg-color);
 }
 
 .font-elegant { font-family: 'Playfair Display', serif; }
 .font-modern { font-family: 'Montserrat', sans-serif; }
 
-/* Scroll suave para la página */
+/* Scroll suave */
 html { scroll-behavior: smooth; }
 
 /* Animación de entrada suave */
@@ -19,26 +24,26 @@ html { scroll-behavior: smooth; }
 }
 
 .animate-fade-in {
-    animation: fadeIn 2s ease-out forwards;
+    animation: fadeIn 1.5s ease-out forwards;
 }
 
-/* Efecto suave para el itinerario e interacción */
+/* Efecto suave para el itinerario */
 .relative.pl-8 {
     transition: all 0.3s ease;
 }
 
 .relative.pl-8:hover {
-    transform: translateX(10px);
+    transform: translateX(5px);
 }
 
-/* Estilo de los inputs al hacer focus */
+/* Estilo de los inputs al hacer focus (Unificado) */
 input:focus, textarea:focus, select:focus {
     border-color: var(--emerald-dark) !important;
     box-shadow: 0 0 0 3px rgba(6, 78, 59, 0.1);
     outline: none;
 }
 
-/* Clases de estado para los botones de asistencia */
+/* --- CLASES DE ESTADO PARA BOTONES (RSVP) --- */
 .btn-asistir-activo {
     background-color: var(--emerald-dark) !important;
     color: white !important;
@@ -51,12 +56,19 @@ input:focus, textarea:focus, select:focus {
     border-color: var(--red-wedding) !important;
 }
 
-/* Ajustes para móviles */
+/* Transición para ocultar/mostrar sección de invitados */
+#seccionInvitados {
+    transition: all 0.4s ease-in-out;
+}
+
+/* --- AJUSTES RESPONSIVOS --- */
 @media (max-width: 768px) {
     h1 { font-size: 3.5rem !important; }
-    .text-6xl { font-size: 3rem !important; }
+    .text-6xl { font-size: 2.5rem !important; }
+    .text-4xl { font-size: 1.8rem !important; }
 }
 
 #seccionInvitados {
     transition: all 0.4s ease-in-out;
+
 }
