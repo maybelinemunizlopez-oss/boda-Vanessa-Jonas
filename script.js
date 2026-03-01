@@ -26,15 +26,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (nombreFamilia) {
         // Reemplaza guiones por espacios (Familia-Krebs -> Familia Krebs)
-        inputNombre.value = nombreFamilia.replace(/-/g, ' ');
-        mensajeBienvenida.innerText = `¡Hola ${inputNombre.value}! Qué alegría que estés aquí.`;
+        const nombreLimpio = nombreFamilia.replace(/-/g, ' ');
+        if(inputNombre) inputNombre.value = nombreLimpio;
+        if(mensajeBienvenida) mensajeBienvenida.innerText = `¡Hola ${nombreLimpio}! Qué alegría que estés aquí.`;
     }
 
     if (pasesMax) {
         // Establecer el máximo permitido en el input
-        inputCantidad.max = pasesMax;
-        inputCantidad.value = pasesMax; // Por defecto marcar que van todos
-        labelMax.innerText = `de ${pasesMax} pases reservados`;
+        if(inputCantidad) {
+            inputCantidad.max = pasesMax;
+            inputCantidad.value = pasesMax; // Por defecto marcar que van todos
+        }
+        if(labelMax) labelMax.innerText = `de ${pasesMax} pases reservados`;
     }
 
     // --- 3. CUENTA REGRESIVA ---
@@ -42,10 +45,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const ahora = new Date().getTime();
         const diff = fechaBoda - ahora;
         if (diff <= 0) return;
-        document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
-        document.getElementById("hours").innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        document.getElementById("minutes").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        document.getElementById("seconds").innerText = Math.floor((diff % (1000 * 60)) / 1000);
+        
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        if(document.getElementById("days")) document.getElementById("days").innerText = days;
+        if(document.getElementById("hours")) document.getElementById("hours").innerText = hours;
+        if(document.getElementById("minutes")) document.getElementById("minutes").innerText = minutes;
+        if(document.getElementById("seconds")) document.getElementById("seconds").innerText = seconds;
     };
     setInterval(actualizarCountdown, 1000);
     actualizarCountdown();
@@ -56,67 +65,75 @@ document.addEventListener('DOMContentLoaded', () => {
     const valorAsistencia = document.getElementById('valorAsistencia');
     const seccionInvitados = document.getElementById('seccionInvitados');
 
-    btnAsistir.addEventListener('click', () => {
-        valorAsistencia.value = "SI";
-        btnAsistir.classList.add('btn-asistir-activo');
-        btnNoAsistir.classList.remove('btn-no-asistir-activo');
-        seccionInvitados.classList.remove('hidden');
-        // Si vuelven a marcar Sí, restaurar a su máximo original
-        if(pasesMax) inputCantidad.value = pasesMax;
-    });
+    if(btnAsistir && btnNoAsistir) {
+        btnAsistir.addEventListener('click', () => {
+            valorAsistencia.value = "SI";
+            btnAsistir.classList.add('bg-emerald-600', 'text-white');
+            btnAsistir.classList.remove('text-emerald-800');
+            btnNoAsistir.classList.remove('bg-red-600', 'text-white');
+            btnNoAsistir.classList.add('text-red-800');
+            seccionInvitados.classList.remove('hidden');
+            if(pasesMax) inputCantidad.value = pasesMax;
+        });
 
-    btnNoAsistir.addEventListener('click', () => {
-        valorAsistencia.value = "NO";
-        btnNoAsistir.classList.add('btn-no-asistir-activo');
-        btnAsistir.classList.remove('btn-asistir-activo');
-        seccionInvitados.classList.add('hidden');
-        inputCantidad.value = 0;
-        document.getElementById('inputDieta').value = "N/A";
-    });
+        btnNoAsistir.addEventListener('click', () => {
+            valorAsistencia.value = "NO";
+            btnNoAsistir.classList.add('bg-red-600', 'text-white');
+            btnNoAsistir.classList.remove('text-red-800');
+            btnAsistir.classList.remove('bg-emerald-600', 'text-white');
+            btnAsistir.classList.add('text-emerald-800');
+            seccionInvitados.classList.add('hidden');
+            inputCantidad.value = 0;
+            document.getElementById('inputDieta').value = "N/A";
+        });
+    }
 
     // --- 5. VALIDACIÓN DE CANTIDAD ---
-    inputCantidad.addEventListener('input', () => {
-        if (pasesMax && parseInt(inputCantidad.value) > parseInt(pasesMax)) {
-            alert(`Lo sentimos, solo tienes ${pasesMax} pases asignados.`);
-            inputCantidad.value = pasesMax;
-        }
-    });
+    if(inputCantidad) {
+        inputCantidad.addEventListener('input', () => {
+            if (pasesMax && parseInt(inputCantidad.value) > parseInt(pasesMax)) {
+                alert(`Lo sentimos, solo tienes ${pasesMax} pases asignados.`);
+                inputCantidad.value = pasesMax;
+            }
+        });
+    }
 
     // --- 6. ENVÍO A SHEETDB ---
     const form = document.getElementById('rsvpForm');
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        if (!valorAsistencia.value) {
-            alert("Por favor, selecciona si asistirás.");
-            return;
-        }
-
-        const btnSubmit = document.getElementById('btnEnviar');
-        btnSubmit.innerText = "ENVIANDO...";
-        btnSubmit.disabled = true;
-
-        const data = Object.fromEntries(new FormData(form).entries());
-
-        try {
-            // REEMPLAZA TU_ID_AQUÍ
-            const response = await fetch('https://sheetdb.io/api/v1/mtnhnv7jyyebe', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ data: [data] })
-            });
-
-            if (response.ok) {
-                form.classList.add('hidden');
-                document.getElementById('mensajeExito').classList.remove('hidden');
-                mensajeBienvenida.classList.add('hidden');
-            } else {
-                throw new Error();
+    if(form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            if (!valorAsistencia.value) {
+                alert("Por favor, selecciona si asistirás.");
+                return;
             }
-        } catch (error) {
-            alert("Error al enviar. Inténtalo de nuevo.");
-            btnSubmit.innerText = "Enviar Confirmación";
-            btnSubmit.disabled = false;
-        }
-    });
+
+            const btnSubmit = document.getElementById('btnEnviar');
+            btnSubmit.innerText = "ENVIANDO...";
+            btnSubmit.disabled = true;
+
+            const data = Object.fromEntries(new FormData(form).entries());
+
+            try {
+                const response = await fetch('https://sheetdb.io/api/v1/mtnhnv7jyyebe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ data: [data] })
+                });
+
+                if (response.ok) {
+                    form.classList.add('hidden');
+                    document.getElementById('mensajeExito').classList.remove('hidden');
+                    if(mensajeBienvenida) mensajeBienvenida.classList.add('hidden');
+                } else {
+                    throw new Error();
+                }
+            } catch (error) {
+                alert("Error al enviar. Inténtalo de nuevo.");
+                btnSubmit.innerText = "Enviar Confirmación";
+                btnSubmit.disabled = false;
+            }
+        });
+    }
 });
