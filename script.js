@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             try {
                 const response = await fetch('https://sheetdb.io/api/v1/mtnhnv7jyyebe', {
-                    method: 'POST',
+                    method: 'PATCH',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ data: [data] })
                 });
@@ -137,3 +137,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
