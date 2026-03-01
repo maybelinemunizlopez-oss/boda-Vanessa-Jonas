@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boda | Vanessa & Jonas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#fdfbf7] font-modern text-gray-800">
+
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1510312305653-8ed496efae75?q=80&w=1920" class="absolute inset-0 w-full h-full object-cover opacity-90" alt="Costa Rica">
+        <div class="absolute inset-0 bg-black/30"></div>
+        <div class="relative z-10 text-center text-white animate-fade-in px-4">
+            <p class="uppercase tracking-[0.5em] text-sm mb-4 font-semibold">¡Nos Casamos!</p>
+            <h1 class="font-elegant text-6xl md:text-9xl mb-4">Vanessa & Jonas</h1>
+            <div class="w-24 h-[1px] bg-amber-400 mx-auto mb-6"></div>
+            <a id="btnCalendar" href="#" target="_blank" class="inline-block bg-white/20 backdrop-blur-md border border-white/50 px-6 py-2 rounded-full text-sm hover:bg-white hover:text-emerald-900 transition-all">
+                📅 Añadir a mi Calendario
+            </a>
+        </div>
+    </header>
+
+    <section class="py-16 bg-emerald-900 text-white text-center">
+        <h2 class="font-elegant text-3xl mb-8 italic text-amber-200">Solo faltan...</h2>
+        <div class="flex justify-center gap-4 md:gap-10">
+            <div class="text-center"><span id="days" class="block text-4xl md:text-6xl font-bold">00</span><span class="text-xs uppercase tracking-widest opacity-70">Días</span></div>
+            <div class="text-center"><span id="hours" class="block text-4xl md:text-6xl font-bold">00</span><span class="text-xs uppercase tracking-widest opacity-70">Horas</span></div>
+            <div class="text-center"><span id="minutes" class="block text-4xl md:text-6xl font-bold">00</span><span class="text-xs uppercase tracking-widest opacity-70">Min</span></div>
+            <div class="text-center"><span id="seconds" class="block text-4xl md:text-6xl font-bold">00</span><span class="text-xs uppercase tracking-widest opacity-70">Seg</span></div>
+        </div>
+    </section>
+
+    <section class="py-20 px-4 max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="font-elegant text-4xl text-emerald-900">Nuestros Testigos Naturales</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="rounded-2xl overflow-hidden shadow-lg h-80"><img src="https://images.unsplash.com/photo-1516934024742-b461fbc4760e?q=80&w=600" class="w-full h-full object-cover grayscale-[30%] hover:grayscale-0 transition-all"></div>
+            <div class="rounded-2xl overflow-hidden shadow-lg h-80"><img src="https://images.unsplash.com/photo-1589133857397-400bb3429381?q=80&w=600" class="w-full h-full object-cover grayscale-[30%] hover:grayscale-0 transition-all"></div>
+            <div class="rounded-2xl overflow-hidden shadow-lg h-80"><img src="https://images.unsplash.com/photo-1551000673-9892c5549065?q=80&w=600" class="w-full h-full object-cover grayscale-[30%] hover:grayscale-0 transition-all"></div>
+        </div>
+    </section>
+
+    <section class="py-20 px-4 bg-white">
+        <div class="max-w-xl mx-auto">
+            <h2 class="font-elegant text-4xl text-center text-emerald-900 mb-16 underline decoration-amber-500 decoration-1 underline-offset-8">Itinerario</h2>
+            <div class="space-y-12 border-l-2 border-emerald-100 ml-4 md:ml-0">
+                <div class="relative pl-8">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-emerald-800"></div>
+                    <span class="text-amber-600 font-bold">4:30 PM</span>
+                    <h4 class="font-elegant text-2xl">La Ceremonia</h4>
+                    <p class="text-gray-500 text-sm">Playa Hermosa, Guanacaste</p>
+                </div>
+                <div class="relative pl-8">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-emerald-800"></div>
+                    <span class="text-amber-600 font-bold">6:00 PM</span>
+                    <h4 class="font-elegant text-2xl">Cóctel de Bienvenida</h4>
+                    <p class="text-gray-500 text-sm">Puesta de sol y música en vivo</p>
+                </div>
+                <div class="relative pl-8">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-emerald-800"></div>
+                    <span class="text-amber-600 font-bold">8:00 PM</span>
+                    <h4 class="font-elegant text-2xl">Cena y Celebración</h4>
+                    <p class="text-gray-500 text-sm">Banquete tropical y fiesta</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="confirmar" class="py-24 px-4 bg-[#fdfbf7]">
+        <div class="max-w-xl mx-auto bg-white p-10 rounded-3xl shadow-2xl border border-emerald-50">
+            <h2 class="font-elegant text-4xl text-center text-emerald-950 mb-8">Confirmar Asistencia</h2>
+            
+            <form id="rsvpForm" class="space-y-8">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-widest text-emerald-900 mb-2">Nombre Completo</label>
+                    <input type="text" name="nombre" required placeholder="Ej: Juan Pérez" class="w-full p-4 rounded-xl border border-gray-100 bg-gray-50 focus:outline-emerald-500">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-widest text-emerald-900 mb-4 text-center">¿Nos acompañas?</label>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button type="button" id="btnAsistir" class="py-4 rounded-xl border-2 border-emerald-100 font-bold uppercase tracking-widest text-sm transition-all text-emerald-800">¡Sí, iré! 🥂</button>
+                        <button type="button" id="btnNoAsistir" class="py-4 rounded-xl border-2 border-red-50 font-bold uppercase tracking-widest text-sm transition-all text-red-800">No podré 😔</button>
+                    </div>
+                    <input type="hidden" name="asistencia" id="valorAsistencia" value="" required>
+                </div>
+
+                <div id="seccionInvitados" class="space-y-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-emerald-900 mb-2">Total de personas</label>
+                        <input type="number" name="cantidad" id="inputCantidad" value="1" min="1" max="10" class="w-full p-4 rounded-xl border border-gray-100 bg-gray-50 focus:outline-emerald-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-emerald-900 mb-2">Dieta Especial / Alergias</label>
+                        <textarea name="dieta" id="inputDieta" placeholder="Ej: Sin gluten, vegano..." class="w-full p-4 rounded-xl border border-gray-100 bg-gray-50 focus:outline-emerald-500 h-24"></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" id="btnEnviar" class="w-full bg-emerald-800 text-white py-5 rounded-xl font-bold uppercase tracking-widest hover:bg-emerald-700 transition-all shadow-lg transform hover:-translate-y-1">
+                    Enviar al Excel
+                </button>
+            </form>
+
+            <div id="mensajeExito" class="hidden text-center p-6 bg-emerald-50 rounded-xl mt-4">
+                <p class="text-emerald-800 font-bold italic text-xl">¡Pura Vida! Confirmación guardada.</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+/* Configuraciones Globales */
+:root {
+    --emerald-dark: #064e3b;
+    --emerald-light: #059669;
+    --gold: #d97706;
+    --red-wedding: #991b1b;
+}
+
+.font-elegant { font-family: 'Playfair Display', serif; }
+.font-modern { font-family: 'Montserrat', sans-serif; }
+
+/* Scroll suave para la página */
+html { scroll-behavior: smooth; }
+
+/* Animación de entrada suave */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 2s ease-out forwards;
+}
+
+/* Efecto suave para el itinerario e interacción */
+.relative.pl-8 {
+    transition: all 0.3s ease;
+}
+
+.relative.pl-8:hover {
+    transform: translateX(10px);
+}
+
+/* Estilo de los inputs al hacer focus */
+input:focus, textarea:focus, select:focus {
+    border-color: var(--emerald-dark) !important;
+    box-shadow: 0 0 0 3px rgba(6, 78, 59, 0.1);
+    outline: none;
+}
+
+/* Clases de estado para los botones de asistencia */
+.btn-asistir-activo {
+    background-color: var(--emerald-dark) !important;
+    color: white !important;
+    border-color: var(--emerald-dark) !important;
+}
+
+.btn-no-asistir-activo {
+    background-color: var(--red-wedding) !important;
+    color: white !important;
+    border-color: var(--red-wedding) !important;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+    h1 { font-size: 3.5rem !important; }
+    .text-6xl { font-size: 3rem !important; }
+}
+
+#seccionInvitados {
+    transition: all 0.4s ease-in-out;
+}
