@@ -16,19 +16,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 2. SISTEMA VIP (Lectura de URL) ---
     const urlParams = new URLSearchParams(window.location.search);
-    const nombreFamilia = urlParams.get('n');
+    const nombreFamilia = urlParams.get('n'); // Lee ?n=
+    const pasesMax = urlParams.get('p');      // Lee ?p=
 
     const inputNombre = document.getElementById('inputNombre');
+    const inputCantidad = document.getElementById('inputCantidad');
+    const labelMax = document.getElementById('labelMax');
     const mensajeBienvenida = document.getElementById('mensajeBienvenida');
 
     if (nombreFamilia) {
-        // Reemplaza guiones por espacios (Familia-Perez -> Familia Perez)
+        // Reemplaza guiones por espacios (Familia-Krebs -> Familia Krebs)
         inputNombre.value = nombreFamilia.replace(/-/g, ' ');
         mensajeBienvenida.innerText = `¡Hola ${inputNombre.value}! Qué alegría que estés aquí.`;
-    } else {
-        inputNombre.value = "Familia / Invitado";
-        inputNombre.readOnly = false; // Permitir escribir si no hay link
-        inputNombre.classList.remove('bg-gray-100', 'cursor-not-allowed');
+    }
+
+    if (pasesMax) {
+        // Establecer el máximo permitido en el input
+        inputCantidad.max = pasesMax;
+        inputCantidad.value = pasesMax; // Por defecto marcar que van todos
+        labelMax.innerText = `de ${pasesMax} pases reservados`;
     }
 
     // --- 3. CUENTA REGRESIVA ---
@@ -55,6 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
         btnAsistir.classList.add('btn-asistir-activo');
         btnNoAsistir.classList.remove('btn-no-asistir-activo');
         seccionInvitados.classList.remove('hidden');
+        // Si vuelven a marcar Sí, restaurar a su máximo original
+        if(pasesMax) inputCantidad.value = pasesMax;
     });
 
     btnNoAsistir.addEventListener('click', () => {
@@ -62,11 +70,19 @@ document.addEventListener('DOMContentLoaded', () => {
         btnNoAsistir.classList.add('btn-no-asistir-activo');
         btnAsistir.classList.remove('btn-asistir-activo');
         seccionInvitados.classList.add('hidden');
-        document.getElementById('inputCantidad').value = 0;
+        inputCantidad.value = 0;
         document.getElementById('inputDieta').value = "N/A";
     });
 
-    // --- 5. ENVÍO A SHEETDB ---
+    // --- 5. VALIDACIÓN DE CANTIDAD ---
+    inputCantidad.addEventListener('input', () => {
+        if (pasesMax && parseInt(inputCantidad.value) > parseInt(pasesMax)) {
+            alert(`Lo sentimos, solo tienes ${pasesMax} pases asignados.`);
+            inputCantidad.value = pasesMax;
+        }
+    });
+
+    // --- 6. ENVÍO A SHEETDB ---
     const form = document.getElementById('rsvpForm');
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -84,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             // REEMPLAZA TU_ID_AQUÍ
-            const response = await fetch('https://sheetdb.io/api/v1/TU_ID_AQUÍ', {
+            const response = await fetch('https://sheetdb.io/api/v1/mtnhnv7jyyebe', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ data: [data] })
