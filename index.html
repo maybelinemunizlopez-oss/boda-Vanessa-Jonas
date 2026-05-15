@@ -4,114 +4,696 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boda | Vanessa & Jonas</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 </head>
-<body class="bg-[#fdfbf7] font-modern text-gray-800">
+<body>
 
-    <header class="relative h-screen flex items-center justify-center overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1510312305653-8ed496efae75?q=80&w=1920" class="absolute inset-0 w-full h-full object-cover opacity-90" alt="Costa Rica">
-        <div class="absolute inset-0 bg-black/30"></div>
-        <div class="relative z-10 text-center text-white animate-fade-in px-4">
-            <p class="uppercase tracking-[0.5em] text-sm mb-4 font-semibold">¡Nos Casamos!</p>
-            <h1 class="font-elegant text-6xl md:text-9xl mb-4">Vanessa & Jonas</h1>
-            <div class="w-24 h-[1px] bg-amber-400 mx-auto mb-6"></div>
-            <a id="btnCalendar" href="#" target="_blank" class="inline-block bg-white/20 backdrop-blur-md border border-white/50 px-6 py-2 rounded-full text-sm hover:bg-white hover:text-emerald-900 transition-all">
-                📅 Añadir a mi Calendario
-            </a>
+<!-- ════════════════════════════════════ SOBRE DE APERTURA -->
+<div id="pantalla-sobre">
+    <div class="sobre-marco">
+        <div class="sobre-borde"></div>
+
+        <!-- ╔══════════════════════════════════════════════════════════╗
+             ║  DECORACIÓN ESQUINAS DEL SOBRE DE APERTURA              ║
+             ║  Cambia los src="img/flor-X.png" por tus propias fotos  ║
+             ║  de flores, ramas o decoraciones personales              ║
+             ║  Tamaño recomendado: 120×120 px, fondo transparente (PNG)║
+             ║  Si la imagen no carga, se muestra la flor SVG de respaldo║
+             ╚══════════════════════════════════════════════════════════╝ -->
+        <div class="sobre-corners">
+            <img src="img/flor-tl.png" class="corner-img corner-tl" alt="" onerror="this.style.display='none'">
+            <img src="img/flor-tr.png" class="corner-img corner-tr" alt="" onerror="this.style.display='none'">
+            <img src="img/flor-bl.png" class="corner-img corner-bl" alt="" onerror="this.style.display='none'">
+            <img src="img/flor-br.png" class="corner-img corner-br" alt="" onerror="this.style.display='none'">
+            <!-- Flores SVG de respaldo -->
+            <svg class="corner-svg corner-svg-tl" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><g transform="translate(22,22)" opacity="0.78"><ellipse cx="0" cy="0" rx="18" ry="34" fill="#c8a96e" transform="rotate(-30)"/><ellipse cx="0" cy="0" rx="18" ry="34" fill="#d4b87a" transform="rotate(20)"/><ellipse cx="0" cy="0" rx="14" ry="26" fill="#e8d4a8" transform="rotate(70)"/><circle cx="0" cy="0" r="8" fill="#f5e8c8"/><circle cx="0" cy="0" r="3.5" fill="#c8a060"/></g><path d="M 38 22 Q 72 42 105 32" stroke="#a8896a" stroke-width="1" fill="none" opacity="0.4"/><path d="M 22 38 Q 42 72 32 105" stroke="#a8896a" stroke-width="1" fill="none" opacity="0.4"/></svg>
+            <svg class="corner-svg corner-svg-tr" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><g transform="translate(98,22)" opacity="0.78"><ellipse cx="0" cy="0" rx="18" ry="34" fill="#c8a96e" transform="rotate(30)"/><ellipse cx="0" cy="0" rx="18" ry="34" fill="#d4b87a" transform="rotate(-20)"/><ellipse cx="0" cy="0" rx="14" ry="26" fill="#e8d4a8" transform="rotate(-70)"/><circle cx="0" cy="0" r="8" fill="#f5e8c8"/><circle cx="0" cy="0" r="3.5" fill="#c8a060"/></g><path d="M 82 22 Q 48 42 15 32" stroke="#a8896a" stroke-width="1" fill="none" opacity="0.4"/><path d="M 98 38 Q 78 72 88 105" stroke="#a8896a" stroke-width="1" fill="none" opacity="0.4"/></svg>
+            <svg class="corner-svg corner-svg-bl" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><g transform="translate(22,98)" opacity="0.78"><ellipse cx="0" cy="0" rx="18" ry="34" fill="#c8a96e" transform="rotate(-30)"/><ellipse cx="0" cy="0" rx="18" ry="34" fill="#d4b87a" transform="rotate(20)"/><ellipse cx="0" cy="0" rx="14" ry="26" fill="#e8d4a8" transform="rotate(70)"/><circle cx="0" cy="0" r="8" fill="#f5e8c8"/><circle cx="0" cy="0" r="3.5" fill="#c8a060"/></g><path d="M 38 98 Q 72 78 105 88" stroke="#a8896a" stroke-width="1" fill="none" opacity="0.4"/><path d="M 22 82 Q 42 48 32 15" stroke="#a8896a" stroke-width="1" fill="none" opacity="0.4"/></svg>
+            <svg class="corner-svg corner-svg-br" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><g transform="translate(98,98)" opacity="0.78"><ellipse cx="0" cy="0" rx="18" ry="34" fill="#c8a96e" transform="rotate(30)"/><ellipse cx="0" cy="0" rx="18" ry="34" fill="#d4b87a" transform="rotate(-20)"/><ellipse cx="0" cy="0" rx="14" ry="26" fill="#e8d4a8" transform="rotate(-70)"/><circle cx="0" cy="0" r="8" fill="#f5e8c8"/><circle cx="0" cy="0" r="3.5" fill="#c8a060"/></g><path d="M 82 98 Q 48 78 15 88" stroke="#a8896a" stroke-width="1" fill="none" opacity="0.4"/><path d="M 98 82 Q 78 48 88 15" stroke="#a8896a" stroke-width="1" fill="none" opacity="0.4"/></svg>
         </div>
+
+        <div id="puerta-izq" class="puerta">
+            <img src="img/invi2.jpg" class="puerta-img puerta-img-izq" alt="">
+            <div class="puerta-letra letra-izq">V</div>
+            <div class="sobre-velo"></div>
+        </div>
+        <div id="puerta-der" class="puerta puerta-right">
+            <img src="img/invi2.jpg" class="puerta-img puerta-img-der" alt="">
+            <div class="puerta-letra letra-der">J</div>
+            <div class="sobre-velo"></div>
+        </div>
+
+        <div id="sello-clic">
+            <div class="sello-ring"></div>
+            <img src="img/sello.png" class="sello-img" alt="Sello">
+            <p class="sello-texto">Tocar para abrir</p>
+        </div>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════ MODAL SOBRE RSVP -->
+<div id="modal-rsvp" aria-modal="true" role="dialog" aria-label="Confirmar asistencia">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-sobre-wrap">
+
+        <!-- Solapa del sobre -->
+        <div class="modal-flap" id="modalFlap">
+            <span class="modal-flap-txt">V<span class="modal-flap-amp">&</span>J</span>
+        </div>
+
+        <!-- Cuerpo del sobre -->
+        <div class="modal-envelope">
+            <div class="modal-carta" id="modalCarta">
+
+                <!-- ╔════════════════════════════════════════════════════╗
+                     ║  ESQUINAS DECORATIVAS DE LA CARTA RSVP            ║
+                     ║  Mismas imágenes que las del sobre de apertura     ║
+                     ║  o puedes usar otras: src="img/flor-carta-X.png"  ║
+                     ╚════════════════════════════════════════════════════╝ -->
+                <div class="carta-corners">
+                    <img src="img/flor-tl.png" class="cc-img cc-tl" alt="" onerror="this.style.display='none'">
+                    <img src="img/flor-tr.png" class="cc-img cc-tr" alt="" onerror="this.style.display='none'">
+                    <img src="img/flor-bl.png" class="cc-img cc-bl" alt="" onerror="this.style.display='none'">
+                    <img src="img/flor-br.png" class="cc-img cc-br" alt="" onerror="this.style.display='none'">
+                    <!-- SVG de respaldo -->
+                    <svg class="cc-svg cc-svg-tl" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><g transform="translate(14,14)" opacity="0.65"><ellipse cx="0" cy="0" rx="12" ry="22" fill="#c8a96e" transform="rotate(-30)"/><ellipse cx="0" cy="0" rx="12" ry="22" fill="#d4b87a" transform="rotate(25)"/><circle cx="0" cy="0" r="5.5" fill="#f5e8c8"/><circle cx="0" cy="0" r="2.5" fill="#c8a060"/></g></svg>
+                    <svg class="cc-svg cc-svg-tr" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><g transform="translate(66,14)" opacity="0.65"><ellipse cx="0" cy="0" rx="12" ry="22" fill="#c8a96e" transform="rotate(30)"/><ellipse cx="0" cy="0" rx="12" ry="22" fill="#d4b87a" transform="rotate(-25)"/><circle cx="0" cy="0" r="5.5" fill="#f5e8c8"/><circle cx="0" cy="0" r="2.5" fill="#c8a060"/></g></svg>
+                    <svg class="cc-svg cc-svg-bl" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><g transform="translate(14,66)" opacity="0.65"><ellipse cx="0" cy="0" rx="12" ry="22" fill="#c8a96e" transform="rotate(-30)"/><ellipse cx="0" cy="0" rx="12" ry="22" fill="#d4b87a" transform="rotate(25)"/><circle cx="0" cy="0" r="5.5" fill="#f5e8c8"/><circle cx="0" cy="0" r="2.5" fill="#c8a060"/></g></svg>
+                    <svg class="cc-svg cc-svg-br" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><g transform="translate(66,66)" opacity="0.65"><ellipse cx="0" cy="0" rx="12" ry="22" fill="#c8a96e" transform="rotate(30)"/><ellipse cx="0" cy="0" rx="12" ry="22" fill="#d4b87a" transform="rotate(-25)"/><circle cx="0" cy="0" r="5.5" fill="#f5e8c8"/><circle cx="0" cy="0" r="2.5" fill="#c8a060"/></g></svg>
+                </div>
+
+                <button class="modal-cerrar" id="modalCerrar" aria-label="Cerrar">✕</button>
+
+                <div class="carta-contenido">
+                    <p class="carta-eyebrow">14 · Octubre · 2026</p>
+                    <h3 class="carta-title">Confirmar <em>Asistencia</em></h3>
+                    <div class="carta-divider"></div>
+                    <p id="mensajeBienvenida" class="carta-welcome">¡Hola! Qué alegría que estés aquí.</p>
+
+                    <form id="rsvpForm" class="rsvp-form">
+                        <div class="rsvp-field">
+                            <label class="rsvp-label">Familia / Invitado</label>
+                            <input type="text" name="nombre" id="inputNombre" readonly class="rsvp-input rsvp-input-ro">
+                        </div>
+                        <div class="rsvp-btns">
+                            <button type="button" id="btnAsistir" class="rsvp-btn rsvp-btn-si"><span>✦</span> Sí, asistiré</button>
+                            <button type="button" id="btnNoAsistir" class="rsvp-btn rsvp-btn-no"><span>✕</span> No podré</button>
+                        </div>
+                        <input type="hidden" name="asistencia" id="valorAsistencia" value="" required>
+                        <div id="seccionInvitados" class="rsvp-extra hidden">
+                            <div class="rsvp-field">
+                                <label class="rsvp-label">Pases Confirmados</label>
+                                <div class="pases-wrap">
+                                    <input type="number" name="cantidad" id="inputCantidad" value="1" min="1" class="rsvp-input pases-input">
+                                    <span id="labelMax" class="pases-max">de 1 pase reservado</span>
+                                </div>
+                            </div>
+                            <div class="rsvp-field">
+                                <label class="rsvp-label">Restricciones Alimentarias</label>
+                                <textarea name="dieta" id="inputDieta" placeholder="Ej: Vegano, sin gluten..." class="rsvp-input rsvp-textarea"></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" id="btnEnviar" class="rsvp-submit">Enviar Confirmación</button>
+                    </form>
+
+                    <div id="mensajeExito" class="rsvp-exito hidden">
+                        <div class="exito-flower">✦</div>
+                        <p class="exito-text">¡Pura Vida!</p>
+                        <p class="exito-sub">Confirmación guardada.<br>¡Nos vemos en octubre!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════ INVITACIÓN PRINCIPAL -->
+<div id="invitacion-main">
+
+    <!-- HERO -->
+    <header class="hero">
+        <img src="img/ima4.jpeg" class="hero-img" alt="Boda">
+        <div class="hero-overlay"></div>
+
+        <!-- ╔══════════════════════════════════════════════════════════╗
+             ║  IMÁGENES DE ESQUINAS DEL HERO                          ║
+             ║  Reemplaza las flores SVG con tus propias imágenes       ║
+             ║  src="img/hero-corner-tl.png"  ← esquina superior izq   ║
+             ║  src="img/hero-corner-tr.png"  ← esquina superior der   ║
+             ║  src="img/hero-corner-bl.png"  ← esquina inferior izq   ║
+             ║  src="img/hero-corner-br.png"  ← esquina inferior der   ║
+             ║  Recomendado: PNG transparente, mínimo 300×400 px        ║
+             ║  Si la imagen no carga, se muestra la rama SVG de respaldo║
+             ╚══════════════════════════════════════════════════════════╝ -->
+        <div class="hero-corners" aria-hidden="true">
+            <img src="img/hero-corner-tl.png" class="hero-corner hc-tl branch" alt="" onerror="this.style.display='none'">
+            <img src="img/hero-corner-tr.png" class="hero-corner hc-tr branch" alt="" onerror="this.style.display='none'">
+            <img src="img/hero-corner-bl.png" class="hero-corner hc-bl branch" alt="" onerror="this.style.display='none'">
+            <img src="img/hero-corner-br.png" class="hero-corner hc-br branch" alt="" onerror="this.style.display='none'">
+            <!-- Ramas SVG de respaldo -->
+            <svg class="hc-svg hc-svg-tl branch" viewBox="0 0 260 380" xmlns="http://www.w3.org/2000/svg" opacity="0"><path d="M 0 0 Q 60 40 100 120 Q 140 200 160 300" stroke="#c8b89a" stroke-width="1.5" fill="none"/><ellipse cx="80" cy="80" rx="20" ry="38" fill="#9aad7a" transform="rotate(-40 80 80)" opacity="0.75"/><ellipse cx="95" cy="90" rx="16" ry="30" fill="#7a9660" transform="rotate(10 95 90)" opacity="0.75"/><ellipse cx="110" cy="130" rx="22" ry="40" fill="#8fb070" transform="rotate(-55 110 130)" opacity="0.75"/><ellipse cx="125" cy="150" rx="15" ry="28" fill="#9aad7a" transform="rotate(20 125 150)" opacity="0.7"/><ellipse cx="145" cy="210" rx="18" ry="34" fill="#7a9660" transform="rotate(-30 145 210)" opacity="0.7"/><circle cx="75" cy="65" r="8" fill="#e8d4a0" opacity="0.9"/><circle cx="73" cy="63" r="3" fill="#c8a060"/><circle cx="140" cy="185" r="7" fill="#f0deb0" opacity="0.8"/><circle cx="138" cy="183" r="2.5" fill="#c8a060"/></svg>
+            <svg class="hc-svg hc-svg-tr branch" viewBox="0 0 260 380" xmlns="http://www.w3.org/2000/svg" opacity="0"><path d="M 260 0 Q 200 40 160 120 Q 120 200 100 300" stroke="#c8b89a" stroke-width="1.5" fill="none"/><ellipse cx="180" cy="80" rx="20" ry="38" fill="#9aad7a" transform="rotate(40 180 80)" opacity="0.75"/><ellipse cx="165" cy="90" rx="16" ry="30" fill="#7a9660" transform="rotate(-10 165 90)" opacity="0.75"/><ellipse cx="150" cy="130" rx="22" ry="40" fill="#8fb070" transform="rotate(55 150 130)" opacity="0.75"/><ellipse cx="135" cy="150" rx="15" ry="28" fill="#9aad7a" transform="rotate(-20 135 150)" opacity="0.7"/><ellipse cx="115" cy="210" rx="18" ry="34" fill="#7a9660" transform="rotate(30 115 210)" opacity="0.7"/><circle cx="185" cy="65" r="8" fill="#e8d4a0" opacity="0.9"/><circle cx="187" cy="63" r="3" fill="#c8a060"/><circle cx="120" cy="185" r="7" fill="#f0deb0" opacity="0.8"/><circle cx="122" cy="183" r="2.5" fill="#c8a060"/></svg>
+            <svg class="hc-svg hc-svg-bl branch" viewBox="0 0 260 280" xmlns="http://www.w3.org/2000/svg" opacity="0"><path d="M 0 280 Q 50 240 80 180 Q 110 120 120 60" stroke="#c8b89a" stroke-width="1.5" fill="none"/><ellipse cx="65" cy="230" rx="20" ry="36" fill="#9aad7a" transform="rotate(30 65 230)" opacity="0.75"/><ellipse cx="90" cy="190" rx="18" ry="32" fill="#7a9660" transform="rotate(-20 90 190)" opacity="0.75"/><ellipse cx="105" cy="145" rx="16" ry="28" fill="#8fb070" transform="rotate(50 105 145)" opacity="0.7"/></svg>
+            <svg class="hc-svg hc-svg-br branch" viewBox="0 0 260 280" xmlns="http://www.w3.org/2000/svg" opacity="0"><path d="M 260 280 Q 210 240 180 180 Q 150 120 140 60" stroke="#c8b89a" stroke-width="1.5" fill="none"/><ellipse cx="195" cy="230" rx="20" ry="36" fill="#9aad7a" transform="rotate(-30 195 230)" opacity="0.75"/><ellipse cx="170" cy="190" rx="18" ry="32" fill="#7a9660" transform="rotate(20 170 190)" opacity="0.75"/><ellipse cx="155" cy="145" rx="16" ry="28" fill="#8fb070" transform="rotate(-50 155 145)" opacity="0.7"/></svg>
+        </div>
+
+        <!-- Pétalos flotantes -->
+        <div class="petals-container" aria-hidden="true">
+            <div class="petal p1"></div><div class="petal p2"></div>
+            <div class="petal p3"></div><div class="petal p4"></div>
+            <div class="petal p5"></div><div class="petal p6"></div>
+            <div class="petal p7"></div><div class="petal p8"></div>
+        </div>
+
+        <div class="hero-content">
+            <p class="hero-eyebrow">¡Nos Casamos!</p>
+            <div class="hero-divider-top"></div>
+            <h1 class="hero-title">Vanessa <span class="ampersand">&</span> Jonas</h1>
+            <div class="hero-divider-bot"></div>
+            <p class="hero-date">14 · Octubre · 2026</p>
+            <button class="hero-rsvp-btn" id="btnAbrirModal">Confirmar Asistencia</button>
+        </div>
+
+        <div class="scroll-hint"><div class="scroll-chevron"></div></div>
     </header>
 
-    <section class="py-16 bg-emerald-900 text-white text-center">
-        <h2 class="font-elegant text-3xl mb-8 italic text-amber-200">Solo faltan...</h2>
-        <div class="flex justify-center gap-4 md:gap-10">
-            <div class="text-center"><span id="days" class="block text-4xl md:text-6xl font-bold">00</span><span class="text-xs uppercase tracking-widest opacity-70">Días</span></div>
-            <div class="text-center"><span id="hours" class="block text-4xl md:text-6xl font-bold">00</span><span class="text-xs uppercase tracking-widest opacity-70">Horas</span></div>
-            <div class="text-center"><span id="minutes" class="block text-4xl md:text-6xl font-bold">00</span><span class="text-xs uppercase tracking-widest opacity-70">Min</span></div>
-            <div class="text-center"><span id="seconds" class="block text-4xl md:text-6xl font-bold">00</span><span class="text-xs uppercase tracking-widest opacity-70">Seg</span></div>
+    <!-- CUENTA REGRESIVA -->
+    <section class="countdown-section">
+        <div class="countdown-bg-pattern" aria-hidden="true"></div>
+        <p class="countdown-label">Solo faltan...</p>
+        <div class="countdown-grid">
+            <div class="cd-unit"><span id="days" class="cd-num">00</span><span class="cd-word">Días</span></div>
+            <div class="cd-dot">·</div>
+            <div class="cd-unit"><span id="hours" class="cd-num">00</span><span class="cd-word">Horas</span></div>
+            <div class="cd-dot">·</div>
+            <div class="cd-unit"><span id="minutes" class="cd-num">00</span><span class="cd-word">Min</span></div>
+            <div class="cd-dot">·</div>
+            <div class="cd-unit"><span id="seconds" class="cd-num">00</span><span class="cd-word">Seg</span></div>
         </div>
     </section>
 
-    <section class="py-20 px-4 bg-white">
-        <div class="max-w-xl mx-auto">
-            <h2 class="font-elegant text-4xl text-center text-emerald-900 mb-16 underline decoration-amber-500 decoration-1 underline-offset-8">Itinerario</h2>
-            <div class="space-y-12 border-l-2 border-emerald-100 ml-4 md:ml-0">
-                <div class="relative pl-8">
-                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-emerald-800"></div>
-                    <span class="text-amber-600 font-bold">4:30 PM</span>
-                    <h4 class="font-elegant text-2xl">La Ceremonia</h4>
-                    <p class="text-gray-500 text-sm">Playa Hermosa, Guanacaste</p>
+    <!-- CITA -->
+    <section class="quote-section reveal">
+        <div class="quote-ornament" aria-hidden="true">✦</div>
+        <blockquote class="quote-text">"El amor no se mira, el amor se hace —<br>y juntos, lo haremos para siempre."</blockquote>
+        <div class="quote-line"></div>
+    </section>
+
+    <!-- ════════════════════ CARRUSEL DE FOTOS -->
+    <section class="carousel-section reveal">
+        <div class="section-ornament" aria-hidden="true">
+            <svg viewBox="0 0 300 40" xmlns="http://www.w3.org/2000/svg" width="240"><line x1="0" y1="20" x2="115" y2="20" stroke="#c8b07a" stroke-width="0.8" opacity="0.7"/><circle cx="130" cy="20" r="4" fill="none" stroke="#c8b07a" stroke-width="1" opacity="0.8"/><circle cx="150" cy="20" r="6" fill="none" stroke="#c8b07a" stroke-width="1" opacity="0.9"/><circle cx="170" cy="20" r="4" fill="none" stroke="#c8b07a" stroke-width="1" opacity="0.8"/><line x1="185" y1="20" x2="300" y2="20" stroke="#c8b07a" stroke-width="0.8" opacity="0.7"/></svg>
+        </div>
+        <h2 class="section-title">Nosotros</h2>
+        <p class="section-sub">Un vistazo a nuestra historia</p>
+
+        <!-- ╔══════════════════════════════════════════════════════════╗
+             ║  CARRUSEL DE FOTOS — agrega tantas como quieras          ║
+             ║  Cambia src="img/foto-N.jpg" por tus fotos               ║
+             ║  Tamaño recomendado: 1200×800 px, proporción 3:2          ║
+             ║  Para agregar más fotos: copia un bloque <div class="slide">║
+             ║  Para quitar fotos: elimina el bloque completo            ║
+             ╚══════════════════════════════════════════════════════════╝ -->
+        <div class="carousel-wrap">
+            <div class="carousel-track" id="carouselTrack">
+
+                <div class="slide">
+                    <img src="img/foto-1.jpg" alt="Foto 1" onerror="this.parentElement.classList.add('slide-ph')">
+                    <div class="slide-ph-txt">Foto 1 — reemplaza con img/foto-1.jpg</div>
                 </div>
-                <div class="relative pl-8">
-                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-emerald-800"></div>
-                    <span class="text-amber-600 font-bold">6:00 PM</span>
-                    <h4 class="font-elegant text-2xl">Cóctel de Bienvenida</h4>
-                    <p class="text-gray-500 text-sm">Puesta de sol y música en vivo</p>
+
+                <div class="slide">
+                    <img src="img/foto-2.jpg" alt="Foto 2" onerror="this.parentElement.classList.add('slide-ph')">
+                    <div class="slide-ph-txt">Foto 2 — reemplaza con img/foto-2.jpg</div>
                 </div>
-                <div class="relative pl-8">
-                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-emerald-800"></div>
-                    <span class="text-amber-600 font-bold">8:00 PM</span>
-                    <h4 class="font-elegant text-2xl">Cena y Celebración</h4>
-                    <p class="text-gray-500 text-sm">Banquete tropical y fiesta</p>
+
+                <div class="slide">
+                    <img src="img/foto-3.jpg" alt="Foto 3" onerror="this.parentElement.classList.add('slide-ph')">
+                    <div class="slide-ph-txt">Foto 3 — reemplaza con img/foto-3.jpg</div>
                 </div>
+
+                <div class="slide">
+                    <img src="img/foto-4.jpg" alt="Foto 4" onerror="this.parentElement.classList.add('slide-ph')">
+                    <div class="slide-ph-txt">Foto 4 — reemplaza con img/foto-4.jpg</div>
+                </div>
+
+                <div class="slide">
+                    <img src="img/foto-5.jpg" alt="Foto 5" onerror="this.parentElement.classList.add('slide-ph')">
+                    <div class="slide-ph-txt">Foto 5 — reemplaza con img/foto-5.jpg</div>
+                </div>
+
+            </div>
+
+            <button class="carousel-btn cb-prev" id="carouselPrev" aria-label="Anterior">&#8592;</button>
+            <button class="carousel-btn cb-next" id="carouselNext" aria-label="Siguiente">&#8594;</button>
+            <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+    </section>
+
+    <!-- ════════════════════ LUGAR / VENUE -->
+    <section class="venue-section reveal">
+        <div class="venue-inner">
+            <div class="venue-text">
+                <div class="section-ornament" style="justify-content:flex-start;margin-bottom:12px">
+                    <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" width="170"><line x1="0" y1="20" x2="72" y2="20" stroke="#c8b07a" stroke-width="0.8" opacity="0.7"/><circle cx="86" cy="20" r="4" fill="none" stroke="#c8b07a" stroke-width="1" opacity="0.8"/><circle cx="100" cy="20" r="6" fill="none" stroke="#c8b07a" stroke-width="1" opacity="0.9"/><circle cx="114" cy="20" r="4" fill="none" stroke="#c8b07a" stroke-width="1" opacity="0.8"/><line x1="128" y1="20" x2="200" y2="20" stroke="#c8b07a" stroke-width="0.8" opacity="0.7"/></svg>
+                </div>
+                <h2 class="section-title venue-title">El Lugar</h2>
+                <p class="venue-name">InnoPlant</p>
+                <p class="venue-address">Costa Rica · 14 Oct 2026</p>
+                <p class="venue-desc">Un espacio verde rodeado de naturaleza tropical — el escenario perfecto para celebrar nuestro amor bajo el cielo costarricense.</p>
+                <a class="venue-map-btn" href="https://maps.google.com/?q=InnoPlant+Costa+Rica" target="_blank" rel="noopener">Ver en Google Maps ↗</a>
+            </div>
+
+            <!-- ╔════════════════════════════════════════════════════╗
+                 ║  FOTO DEL LUGAR — cambia src="img/venue.jpg"       ║
+                 ║  por una foto real del lugar de la boda             ║
+                 ║  Tamaño recomendado: 900×680 px                     ║
+                 ╚════════════════════════════════════════════════════╝ -->
+            <div class="venue-img-wrap">
+                <img src="img/venue.jpg" alt="InnoPlant" class="venue-img" onerror="this.parentElement.classList.add('venue-ph')">
+                <div class="venue-ph-txt">Foto del lugar · img/venue.jpg</div>
+                <div class="venue-img-frame"></div>
             </div>
         </div>
     </section>
 
-    <section id="confirmar" class="py-24 px-4 bg-[#fdfbf7]">
-        <div class="max-w-xl mx-auto bg-white p-10 rounded-3xl shadow-2xl border border-emerald-50">
-            <h2 class="font-elegant text-4xl text-center text-emerald-950 mb-4">Confirmar Asistencia</h2>
-            
-            <p id="mensajeBienvenida" class="text-center text-emerald-800 font-semibold mb-8 italic">¡Hola! Qué alegría que estés aquí.</p>
-
-            <form id="rsvpForm" class="space-y-8">
-                <div>
-                    <label class="block text-xs font-bold uppercase tracking-widest text-emerald-900 mb-2">Familia / Invitado</label>
-                    <input type="text" name="nombre" id="inputNombre" readonly 
-                           placeholder="Nombre de la familia"
-                           class="w-full p-4 rounded-xl border border-gray-200 bg-gray-100 text-gray-800 cursor-not-allowed font-bold">
-                </div>
-
-                <div>
-                    <label class="block text-xs font-bold uppercase tracking-widest text-emerald-900 mb-4 text-center">¿Nos acompañas?</label>
-                    <div class="grid grid-cols-2 gap-4">
-                        <button type="button" id="btnAsistir" class="py-4 rounded-xl border-2 border-emerald-100 font-bold uppercase tracking-widest text-sm transition-all text-emerald-800 hover:bg-emerald-50 focus:ring-4 focus:ring-emerald-200">
-                            Sí, asistiré
-                        </button>
-                        <button type="button" id="btnNoAsistir" class="py-4 rounded-xl border-2 border-red-50 font-bold uppercase tracking-widest text-sm transition-all text-red-800 hover:bg-red-50 focus:ring-4 focus:ring-red-200">
-                            No podré
-                        </button>
-                    </div>
-                    <input type="hidden" name="asistencia" id="valorAsistencia" value="" required>
-                </div>
-
-                <div id="seccionInvitados" class="space-y-6 hidden">
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-widest text-emerald-900 mb-2 italic">Confirmar número de personas:</label>
-                        <div class="flex items-center gap-4 bg-gray-50 p-2 rounded-xl border border-gray-100">
-                            <input type="number" name="cantidad" id="inputCantidad" value="1" min="1" class="w-full p-2 bg-transparent text-center font-bold text-xl outline-none">
-                            <span id="labelMax" class="pr-4 text-gray-400 text-sm whitespace-nowrap">de 1 pase</span>
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-widest text-emerald-900 mb-2">Dieta Especial / Alergias</label>
-                        <textarea name="dieta" id="inputDieta" placeholder="Ej: Vegano, sin gluten..." class="w-full p-4 rounded-xl border border-gray-100 bg-gray-50 focus:outline-emerald-500 h-24"></textarea>
-                    </div>
-                </div>
-
-                <button type="submit" id="btnEnviar" class="w-full bg-emerald-800 text-white py-5 rounded-xl font-bold uppercase tracking-widest hover:bg-emerald-700 transition-all shadow-lg transform hover:-translate-y-1">
-                    Enviar Confirmación
-                </button>
-            </form>
-
-            <div id="mensajeExito" class="hidden text-center p-6 bg-emerald-50 rounded-xl mt-4">
-                <p class="text-emerald-800 font-bold italic text-xl">¡Pura Vida! Confirmación guardada.</p>
+    <!-- ITINERARIO -->
+    <section class="itinerary-section reveal">
+        <div class="section-ornament" aria-hidden="true">
+            <svg viewBox="0 0 300 40" xmlns="http://www.w3.org/2000/svg" width="240"><line x1="0" y1="20" x2="115" y2="20" stroke="#c8b07a" stroke-width="0.8" opacity="0.7"/><circle cx="130" cy="20" r="4" fill="none" stroke="#c8b07a" stroke-width="1"/><circle cx="150" cy="20" r="6" fill="none" stroke="#c8b07a" stroke-width="1"/><circle cx="170" cy="20" r="4" fill="none" stroke="#c8b07a" stroke-width="1"/><line x1="185" y1="20" x2="300" y2="20" stroke="#c8b07a" stroke-width="0.8" opacity="0.7"/></svg>
+        </div>
+        <h2 class="section-title">Itinerario</h2>
+        <div class="section-ornament" aria-hidden="true">
+            <svg viewBox="0 0 300 40" xmlns="http://www.w3.org/2000/svg" width="240"><line x1="0" y1="20" x2="115" y2="20" stroke="#c8b07a" stroke-width="0.8" opacity="0.7"/><circle cx="130" cy="20" r="4" fill="none" stroke="#c8b07a" stroke-width="1"/><circle cx="150" cy="20" r="6" fill="none" stroke="#c8b07a" stroke-width="1"/><circle cx="170" cy="20" r="4" fill="none" stroke="#c8b07a" stroke-width="1"/><line x1="185" y1="20" x2="300" y2="20" stroke="#c8b07a" stroke-width="0.8" opacity="0.7"/></svg>
+        </div>
+        <div class="timeline">
+            <div class="tl-item reveal">
+                <div class="tl-time">4:30 PM</div>
+                <div class="tl-dot-wrap"><div class="tl-line-top"></div><div class="tl-dot"></div><div class="tl-line-bot"></div></div>
+                <div class="tl-card"><h4 class="tl-title">La Ceremonia</h4><p class="tl-sub">InnoPlant, Costa Rica</p></div>
+            </div>
+            <div class="tl-item reveal">
+                <div class="tl-time">6:00 PM</div>
+                <div class="tl-dot-wrap"><div class="tl-line-top"></div><div class="tl-dot"></div><div class="tl-line-bot"></div></div>
+                <div class="tl-card"><h4 class="tl-title">Cóctel de Bienvenida</h4><p class="tl-sub">Puesta de sol & música en vivo</p></div>
+            </div>
+            <div class="tl-item reveal">
+                <div class="tl-time">8:00 PM</div>
+                <div class="tl-dot-wrap"><div class="tl-line-top"></div><div class="tl-dot"></div><div class="tl-line-bot"></div></div>
+                <div class="tl-card"><h4 class="tl-title">Cena & Celebración</h4><p class="tl-sub">Banquete tropical y fiesta</p></div>
             </div>
         </div>
     </section>
 
-    <script src="script.js"></script>
+    <!-- RSVP BANNER FINAL -->
+    <div class="rsvp-cta-banner reveal">
+        <p class="rsvp-cta-text">¿Ya confirmaste tu lugar?</p>
+        <button class="rsvp-cta-btn" id="btnAbrirModal2">Confirmar Asistencia ✦</button>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <p class="footer-names">V & J</p>
+        <p class="footer-date">14 · X · 2026</p>
+        <p class="footer-loc">InnoPlant · Costa Rica</p>
+    </footer>
+</div>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+    --cream:#faf7f0;--parch:#f5efe2;--gold:#c8a060;--gold-lt:#e8d4a0;
+    --green-dk:#1a3028;--green:#2e5044;--green-md:#4a7360;--leaf:#7a9660;
+    --text:#2e2a20;--text-lt:#6a6050;
+    --serif:'Cormorant Garamond',Georgia,serif;
+    --sans:'Jost',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);font-family:var(--sans);color:var(--text);overflow-x:hidden}
+
+/* ── SOBRE APERTURA ─────────────── */
+#pantalla-sobre{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;background:var(--cream);transition:opacity 1s ease,filter 1s ease}
+#pantalla-sobre.desvanecer{opacity:0;filter:blur(14px);pointer-events:none}
+.sobre-marco{position:relative;width:min(440px,92vw);aspect-ratio:3/4.2;perspective:2200px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,0.18);border-radius:3px}
+.sobre-borde{position:absolute;inset:8px;border:1px solid rgba(200,176,122,0.45);z-index:42;pointer-events:none;border-radius:1px}
+.sobre-corners{position:absolute;inset:0;z-index:43;pointer-events:none}
+.corner-img,.corner-svg{position:absolute;width:105px;height:105px}
+.corner-img{object-fit:contain}
+.corner-tl,.corner-svg-tl{top:0;left:0}
+.corner-tr,.corner-svg-tr{top:0;right:0;transform:scaleX(-1)}
+.corner-bl,.corner-svg-bl{bottom:0;left:0;transform:scaleY(-1)}
+.corner-br,.corner-svg-br{bottom:0;right:0;transform:scale(-1)}
+.puerta{position:absolute;top:0;left:0;width:50%;height:100%;z-index:20;transform-origin:left;transition:transform 1.9s cubic-bezier(0.4,0,0.2,1),opacity 1.9s ease,filter 1.9s ease;overflow:hidden;backface-visibility:hidden}
+.puerta-right{left:auto;right:0;transform-origin:right}
+.puerta-img{display:block;position:absolute;top:0;width:200%;height:100%;object-fit:cover}
+.puerta-img-izq{left:0;object-position:left}
+.puerta-img-der{right:0;left:auto;object-position:right}
+.sobre-velo{position:absolute;inset:0;background:linear-gradient(180deg,rgba(200,160,60,0.08) 0%,rgba(30,48,40,0.2) 100%)}
+.puerta-letra{position:absolute;top:50%;transform:translateY(-50%);font-family:var(--serif);font-size:clamp(80px,18vw,130px);font-style:italic;font-weight:300;color:rgba(245,235,200,0.88);text-shadow:0 4px 24px rgba(0,0,0,0.2);user-select:none;line-height:1}
+.letra-izq{right:16px}.letra-der{left:16px}
+.puerta.abrir-izq{transform:rotateY(-112deg);opacity:0.12;filter:brightness(0.55)}
+.puerta.abrir-der{transform:rotateY(112deg);opacity:0.12;filter:brightness(0.55)}
+#sello-clic{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:50;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:14px;transition:transform .4s ease,opacity .5s ease}
+#sello-clic:hover{transform:translate(-50%,-52%) scale(1.08)}
+#sello-clic.desaparecer{opacity:0;pointer-events:none}
+.sello-ring{position:absolute;width:110px;height:110px;border:1px solid rgba(200,160,60,0.5);border-radius:50%;animation:pulso 2.5s ease-in-out infinite}
+@keyframes pulso{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.18);opacity:.15}}
+.sello-img{width:clamp(88px,22vw,110px);filter:drop-shadow(0 6px 20px rgba(0,0,0,0.25))}
+.sello-texto{font-size:10px;font-weight:300;letter-spacing:.5em;text-transform:uppercase;color:rgba(46,42,32,0.55);animation:parpadeo 2.2s ease-in-out infinite;white-space:nowrap}
+@keyframes parpadeo{0%,100%{opacity:.6}50%{opacity:.2}}
+
+/* ── MODAL SOBRE RSVP ───────────── */
+#modal-rsvp{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s ease;padding:16px}
+#modal-rsvp.abierto{opacity:1;pointer-events:auto}
+.modal-backdrop{position:absolute;inset:0;background:rgba(15,25,20,0.75);backdrop-filter:blur(5px);cursor:pointer}
+.modal-sobre-wrap{position:relative;z-index:10;width:min(480px,100%);max-height:92svh;overflow-y:auto;display:flex;flex-direction:column;transform:translateY(44px) scale(0.94);transition:transform .55s cubic-bezier(0.22,1,0.36,1)}
+#modal-rsvp.abierto .modal-sobre-wrap{transform:translateY(0) scale(1)}
+.modal-flap{width:100%;height:60px;background:var(--green-dk);clip-path:polygon(0 0,100% 0,50% 100%);display:flex;align-items:flex-start;justify-content:center;padding-top:10px;transition:transform .65s cubic-bezier(0.4,0,0.2,1);transform-origin:top center}
+#modal-rsvp.abierto .modal-flap{transform:rotateX(-165deg)}
+.modal-flap-txt{color:var(--gold-lt);font-family:var(--serif);font-size:17px;font-style:italic}
+.modal-flap-amp{font-style:normal;color:var(--gold);margin:0 2px}
+.modal-envelope{background:var(--green-dk);padding:3px 3px 4px;border-radius:0 0 5px 5px}
+.modal-carta{position:relative;background:var(--cream);border-radius:2px;overflow:hidden;transform:translateY(-18px);transition:transform .5s .3s cubic-bezier(0.22,1,0.36,1)}
+#modal-rsvp.abierto .modal-carta{transform:translateY(0)}
+.carta-corners{position:absolute;inset:0;pointer-events:none;z-index:2}
+.cc-img,.cc-svg{position:absolute;width:65px;height:65px}
+.cc-img{object-fit:contain}
+.cc-tl,.cc-svg-tl{top:0;left:0}.cc-tr,.cc-svg-tr{top:0;right:0;transform:scaleX(-1)}
+.cc-bl,.cc-svg-bl{bottom:0;left:0;transform:scaleY(-1)}.cc-br,.cc-svg-br{bottom:0;right:0;transform:scale(-1)}
+.modal-cerrar{position:absolute;top:12px;right:12px;z-index:20;width:30px;height:30px;border-radius:50%;background:rgba(0,0,0,0.06);border:none;cursor:pointer;font-size:12px;color:var(--text-lt);display:flex;align-items:center;justify-content:center;transition:background .2s}
+.modal-cerrar:hover{background:rgba(0,0,0,0.12)}
+.carta-contenido{padding:clamp(24px,5vw,44px);padding-top:38px;position:relative;z-index:3}
+.carta-eyebrow{font-size:10px;font-weight:300;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.carta-title{font-family:var(--serif);font-size:clamp(26px,5vw,38px);font-weight:300;color:var(--green-dk);line-height:1.15;margin-bottom:14px}
+.carta-title em{font-style:italic}
+.carta-divider{width:44px;height:1px;background:var(--gold);opacity:.45;margin-bottom:14px}
+.carta-welcome{font-family:var(--serif);font-size:15px;font-style:italic;color:var(--green-md);margin-bottom:22px}
+
+/* ── RSVP FORM ──────────────────── */
+.rsvp-form{display:flex;flex-direction:column;gap:18px}
+.rsvp-field{display:flex;flex-direction:column;gap:7px;text-align:left}
+.rsvp-label{font-size:10px;font-weight:400;letter-spacing:.45em;text-transform:uppercase;color:var(--text-lt)}
+.rsvp-input{width:100%;padding:12px 14px;border:1px solid rgba(200,176,122,0.3);border-radius:2px;background:var(--parch);font-family:var(--serif);font-size:15px;color:var(--text);outline:none;transition:border-color .25s}
+.rsvp-input:focus{border-color:var(--gold)}
+.rsvp-input-ro{background:#ede8df;color:var(--text-lt);font-weight:600}
+.rsvp-textarea{height:76px;resize:none;font-family:var(--sans);font-size:13px}
+.rsvp-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.rsvp-btn{padding:12px 10px;border:1px solid;border-radius:2px;font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;transition:all .25s ease;background:transparent}
+.rsvp-btn-si{border-color:rgba(46,80,68,.35);color:var(--green)}.rsvp-btn-si:hover{background:rgba(46,80,68,.07)}
+.rsvp-btn-no{border-color:rgba(130,50,40,.25);color:#8a3028}.rsvp-btn-no:hover{background:rgba(130,50,40,.05)}
+.rsvp-btn.activo-si{background:var(--green-dk);color:#f8f2e4;border-color:var(--green-dk)}
+.rsvp-btn.activo-no{background:#8a3028;color:#f8f2e4;border-color:#8a3028}
+.rsvp-extra{display:flex;flex-direction:column;gap:14px}.rsvp-extra.hidden{display:none}
+.pases-wrap{display:flex;align-items:center;gap:12px}
+.pases-input{width:78px;text-align:center}.pases-max{font-size:13px;color:var(--text-lt)}
+.rsvp-submit{width:100%;padding:16px;background:var(--green-dk);color:#f8f2e4;border:none;border-radius:2px;font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:.5em;text-transform:uppercase;cursor:pointer;transition:background .25s,transform .2s;margin-top:2px}
+.rsvp-submit:hover{background:var(--green);transform:translateY(-1px)}.rsvp-submit:disabled{opacity:.6;cursor:wait;transform:none}
+.rsvp-exito{display:flex;flex-direction:column;align-items:center;gap:10px;padding:28px 0}.rsvp-exito.hidden{display:none}
+.exito-flower{font-size:28px;color:var(--gold);animation:girar 6s linear infinite}
+@keyframes girar{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.exito-text{font-family:var(--serif);font-size:28px;font-style:italic;color:var(--green-dk)}
+.exito-sub{font-size:13px;font-weight:300;color:var(--text-lt);line-height:1.7;text-align:center}
+
+/* ── MAIN ───────────────────────── */
+#invitacion-main{opacity:0}
+#invitacion-main.aparecer{animation:revelarMain 2.4s forwards}
+@keyframes revelarMain{from{opacity:0;transform:scale(1.04);filter:blur(10px)}to{opacity:1;transform:scale(1);filter:blur(0)}}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s ease,transform .9s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ── HERO ───────────────────────── */
+.hero{position:relative;height:100svh;min-height:600px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:zoomSuave 18s ease-in-out infinite alternate}
+@keyframes zoomSuave{from{transform:scale(1.06) translate(0,0)}to{transform:scale(1.12) translate(-1%,-1%)}}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,25,20,.35) 0%,rgba(15,25,20,.25) 40%,rgba(15,25,20,.6) 100%)}
+.hero-corners{position:absolute;inset:0;pointer-events:none;z-index:5}
+.hero-corner{position:absolute;width:clamp(150px,26vw,300px);object-fit:contain;opacity:0;transition:opacity 1.2s ease}
+.hero-corner.visible{opacity:1}
+.hc-tl{top:0;left:0;transform-origin:top left}
+.hc-tr{top:0;right:0;transform:scaleX(-1);transform-origin:top right}
+.hc-bl{bottom:0;left:0;transform:scaleY(-1);transform-origin:bottom left}
+.hc-br{bottom:0;right:0;transform:scale(-1);transform-origin:bottom right}
+.hc-svg{position:absolute;width:clamp(150px,26vw,280px);opacity:0;transition:opacity 1.2s ease}
+.hc-svg.visible{opacity:1}
+.hc-svg-tl{top:0;left:0}.hc-svg-tr{top:0;right:0}.hc-svg-bl{bottom:0;left:0}.hc-svg-br{bottom:0;right:0}
+.petals-container{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.petal{position:absolute;width:10px;height:16px;background:rgba(245,235,200,.5);border-radius:50% 50% 50% 0;animation:caerPetalo var(--dur,12s) linear infinite var(--delay,0s);top:-20px;left:var(--x,50%);transform:rotate(var(--rot,30deg))}
+.p1{--x:8%;--dur:14s;--delay:0s;--rot:25deg}.p2{--x:18%;--dur:11s;--delay:2s;--rot:-30deg;width:7px;height:12px}
+.p3{--x:33%;--dur:16s;--delay:5s;--rot:45deg}.p4{--x:55%;--dur:13s;--delay:1s;--rot:-15deg;width:9px;height:14px}
+.p5{--x:68%;--dur:15s;--delay:7s;--rot:60deg;width:8px;height:12px}.p6{--x:80%;--dur:12s;--delay:3s;--rot:-40deg}
+.p7{--x:90%;--dur:18s;--delay:9s;--rot:20deg;width:6px;height:10px}.p8{--x:45%;--dur:10s;--delay:6s;--rot:-55deg;width:11px;height:17px}
+@keyframes caerPetalo{0%{top:-20px;opacity:0;transform:rotate(var(--rot,30deg)) translateX(0)}10%{opacity:.7}90%{opacity:.4}100%{top:110%;opacity:0;transform:rotate(calc(var(--rot,30deg) + 180deg)) translateX(30px)}}
+.hero-content{position:relative;z-index:10;text-align:center;color:#f8f2e4;padding:0 24px;animation:subirContenido 1.6s .4s both ease-out;display:flex;flex-direction:column;align-items:center}
+@keyframes subirContenido{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.hero-eyebrow{font-size:11px;font-weight:300;letter-spacing:.6em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:18px}
+.hero-divider-top,.hero-divider-bot{display:flex;align-items:center;justify-content:center;gap:10px;margin:14px auto;width:210px}
+.hero-divider-top::before,.hero-divider-top::after,.hero-divider-bot::before,.hero-divider-bot::after{content:'';flex:1;height:1px;background:rgba(232,212,160,.55)}
+.hero-divider-top::after,.hero-divider-bot::after{content:'✦';flex:none;font-size:10px;color:var(--gold-lt)}
+.hero-divider-bot::before{content:'✦';flex:none;font-size:10px;color:var(--gold-lt)}
+.hero-title{font-family:var(--serif);font-size:clamp(52px,12vw,100px);font-weight:300;font-style:italic;line-height:1.05}
+.ampersand{font-style:normal;color:var(--gold-lt);font-size:.75em}
+.hero-date{font-size:13px;font-weight:200;letter-spacing:.42em;color:rgba(248,242,228,.75);margin-top:18px}
+.hero-rsvp-btn{margin-top:28px;padding:15px 36px;background:transparent;border:1px solid rgba(232,212,160,.6);color:#f8f2e4;font-family:var(--sans);font-size:11px;font-weight:300;letter-spacing:.55em;text-transform:uppercase;cursor:pointer;border-radius:1px;transition:background .3s,border-color .3s,transform .2s;backdrop-filter:blur(4px)}
+.hero-rsvp-btn:hover{background:rgba(200,160,60,.18);border-color:var(--gold-lt);transform:translateY(-2px)}
+.scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:10;animation:bounceLow 2.4s ease-in-out infinite}
+.scroll-chevron{width:20px;height:20px;border-right:1px solid rgba(232,212,160,.7);border-bottom:1px solid rgba(232,212,160,.7);transform:rotate(45deg)}
+@keyframes bounceLow{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+
+/* ── COUNTDOWN ──────────────────── */
+.countdown-section{position:relative;background:var(--green-dk);padding:72px 24px;text-align:center;overflow:hidden}
+.countdown-bg-pattern{position:absolute;inset:0;background-image:radial-gradient(circle at 20% 50%,rgba(74,115,96,.18) 0%,transparent 60%),radial-gradient(circle at 80% 50%,rgba(74,115,96,.18) 0%,transparent 60%);pointer-events:none}
+.countdown-label{font-family:var(--serif);font-size:26px;font-style:italic;font-weight:300;color:var(--gold-lt);margin-bottom:36px;letter-spacing:.04em}
+.countdown-grid{display:flex;align-items:center;justify-content:center;gap:clamp(12px,4vw,36px);flex-wrap:wrap}
+.cd-unit{display:flex;flex-direction:column;align-items:center;gap:6px}
+.cd-num{font-family:var(--serif);font-size:clamp(48px,10vw,80px);font-weight:300;color:#f8f2e4;line-height:1;min-width:2.2ch;text-align:center;transition:transform .2s ease}
+.cd-num.tick{transform:scale(1.06)}.cd-word{font-size:10px;font-weight:300;letter-spacing:.45em;text-transform:uppercase;color:rgba(200,176,122,.6)}
+.cd-dot{font-size:28px;color:rgba(200,176,122,.35);align-self:center;margin-top:-8px}
+
+/* ── QUOTE ──────────────────────── */
+.quote-section{background:var(--parch);padding:80px 32px;text-align:center}
+.quote-ornament{font-size:26px;color:var(--gold);opacity:.55;margin-bottom:18px}
+.quote-text{font-family:var(--serif);font-size:clamp(20px,4vw,28px);font-style:italic;font-weight:300;color:var(--green-dk);line-height:1.7;max-width:600px;margin:0 auto}
+.quote-line{width:1px;height:48px;background:var(--gold);opacity:.4;margin:28px auto 0}
+
+/* ── CARRUSEL ───────────────────── */
+.carousel-section{background:var(--cream);padding:80px 0;text-align:center;overflow:hidden}
+.section-title{font-family:var(--serif);font-size:clamp(32px,6vw,46px);font-weight:300;font-style:italic;color:var(--green-dk);margin:12px 0 6px;letter-spacing:.02em}
+.section-sub{font-size:12px;font-weight:300;letter-spacing:.3em;text-transform:uppercase;color:var(--text-lt);margin-bottom:36px}
+.section-ornament{display:flex;justify-content:center;margin:8px 0}
+.carousel-wrap{position:relative;width:100%;max-width:960px;margin:0 auto;padding-bottom:52px}
+.carousel-track{display:flex;transition:transform .65s cubic-bezier(0.4,0,0.2,1);will-change:transform}
+.slide{min-width:100%;position:relative;aspect-ratio:3/2;overflow:hidden;background:var(--parch);display:flex;align-items:center;justify-content:center}
+.slide img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.slide:hover img{transform:scale(1.03)}
+.slide-ph img{display:none}
+.slide-ph-txt{position:absolute;font-size:13px;color:var(--text-lt);letter-spacing:.08em;font-style:italic;display:none;padding:24px;text-align:center}
+.slide-ph .slide-ph-txt{display:block}
+.carousel-btn{position:absolute;top:50%;transform:translateY(calc(-50% - 26px));width:44px;height:44px;border-radius:50%;background:rgba(250,247,240,.9);border:1px solid rgba(200,176,122,.35);cursor:pointer;font-size:18px;color:var(--green-dk);display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s;backdrop-filter:blur(4px);z-index:5}
+.carousel-btn:hover{background:#faf7f0;transform:translateY(calc(-50% - 26px)) scale(1.1)}
+.cb-prev{left:16px}.cb-next{right:16px}
+.carousel-dots{position:absolute;bottom:18px;left:0;right:0;display:flex;justify-content:center;gap:8px}
+.dot{width:6px;height:6px;border-radius:50%;background:rgba(200,176,122,.3);cursor:pointer;transition:background .3s,transform .3s}
+.dot.activo{background:var(--gold);transform:scale(1.4)}
+
+/* ── VENUE ──────────────────────── */
+.venue-section{background:var(--green-dk);padding:80px 24px}
+.venue-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+.venue-title{color:var(--gold-lt) !important}
+.venue-name{font-family:var(--serif);font-size:32px;font-style:italic;font-weight:300;color:var(--gold-lt);margin-bottom:4px}
+.venue-address{font-size:11px;font-weight:300;letter-spacing:.4em;text-transform:uppercase;color:rgba(200,176,122,.5);margin-bottom:18px}
+.venue-desc{font-size:15px;font-weight:300;line-height:1.8;color:rgba(248,242,228,.7);margin-bottom:26px;max-width:380px}
+.venue-map-btn{display:inline-block;padding:13px 28px;border:1px solid rgba(200,176,122,.4);color:var(--gold-lt);font-size:11px;font-weight:300;letter-spacing:.4em;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:background .25s,border-color .25s}
+.venue-map-btn:hover{background:rgba(200,176,122,.12);border-color:var(--gold-lt)}
+.venue-img-wrap{position:relative;display:flex;align-items:center;justify-content:center;min-height:200px}
+.venue-img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px;display:block}
+.venue-img-frame{position:absolute;inset:12px;border:1px solid rgba(200,176,122,.28);border-radius:2px;pointer-events:none}
+.venue-ph{background:rgba(255,255,255,.05);aspect-ratio:4/3;border-radius:2px;width:100%;display:flex;align-items:center;justify-content:center}
+.venue-ph .venue-img{display:none}
+.venue-ph-txt{display:none;font-size:13px;color:rgba(200,176,122,.45);font-style:italic;text-align:center;padding:20px}
+.venue-ph .venue-ph-txt{display:block}
+
+/* ── ITINERARIO ─────────────────── */
+.itinerary-section{background:var(--cream);padding:80px 24px;text-align:center}
+.timeline{max-width:520px;margin:48px auto 0;display:flex;flex-direction:column}
+.tl-item{display:grid;grid-template-columns:88px 26px 1fr;align-items:stretch;gap:0 14px;text-align:left}
+.tl-time{font-family:var(--serif);font-size:17px;font-style:italic;color:var(--gold);padding-top:15px;text-align:right}
+.tl-dot-wrap{display:flex;flex-direction:column;align-items:center}
+.tl-dot{width:13px;height:13px;border-radius:50%;background:var(--green-dk);border:2px solid var(--gold-lt);flex-shrink:0;z-index:1}
+.tl-line-top,.tl-line-bot{width:1px;background:rgba(200,176,122,.3);flex:1;min-height:14px}
+.tl-item:first-child .tl-line-top{opacity:0}.tl-item:last-child .tl-line-bot{opacity:0}
+.tl-card{background:var(--parch);border:1px solid rgba(200,176,122,.2);border-radius:2px;padding:14px 16px;margin:8px 0;transition:box-shadow .3s,transform .3s}
+.tl-card:hover{box-shadow:0 8px 28px rgba(0,0,0,.07);transform:translateY(-2px)}
+.tl-title{font-family:var(--serif);font-size:20px;font-weight:400;color:var(--green-dk)}
+.tl-sub{font-size:12px;font-weight:300;letter-spacing:.04em;color:var(--text-lt);margin-top:3px}
+
+/* ── RSVP CTA ───────────────────── */
+.rsvp-cta-banner{background:var(--parch);border-top:1px solid rgba(200,176,122,.22);border-bottom:1px solid rgba(200,176,122,.22);padding:52px 24px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:20px}
+.rsvp-cta-text{font-family:var(--serif);font-size:22px;font-style:italic;color:var(--green-dk)}
+.rsvp-cta-btn{padding:17px 44px;background:var(--green-dk);color:#f8f2e4;border:none;border-radius:2px;font-family:var(--sans);font-size:11px;font-weight:300;letter-spacing:.55em;text-transform:uppercase;cursor:pointer;transition:background .25s,transform .2s}
+.rsvp-cta-btn:hover{background:var(--green);transform:translateY(-2px)}
+
+/* ── FOOTER ─────────────────────── */
+.site-footer{background:var(--green-dk);padding:52px 24px 40px;text-align:center;border-top:1px solid rgba(200,176,122,.14)}
+.footer-names{font-family:var(--serif);font-size:36px;font-style:italic;font-weight:300;color:var(--gold-lt);margin-bottom:10px}
+.footer-date,.footer-loc{font-size:11px;font-weight:300;letter-spacing:.42em;text-transform:uppercase;color:rgba(200,176,122,.42);margin-top:6px}
+
+/* ── RESPONSIVE ─────────────────── */
+@media(max-width:700px){
+    .venue-inner{grid-template-columns:1fr;gap:32px}
+    .venue-text .section-ornament{justify-content:center}
+    .venue-title{text-align:center !important}
+    .venue-desc{max-width:100%}
+    .venue-map-btn{display:block;text-align:center}
+}
+@media(max-width:480px){
+    .tl-item{grid-template-columns:70px 22px 1fr;gap:0 8px}.tl-time{font-size:14px}
+    .cd-dot{display:none}.countdown-grid{gap:24px}
+    .carousel-btn{width:36px;height:36px;font-size:15px}.cb-prev{left:6px}.cb-next{right:6px}
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    /* ── SOBRE APERTURA ─── */
+    const sello  = document.getElementById('sello-clic');
+    const pIzq   = document.getElementById('puerta-izq');
+    const pDer   = document.getElementById('puerta-der');
+    const pSobre = document.getElementById('pantalla-sobre');
+    const inv    = document.getElementById('invitacion-main');
+    document.body.style.overflow = 'hidden';
+
+    sello.addEventListener('click', () => {
+        sello.classList.add('desaparecer');
+        pIzq.classList.add('abrir-izq');
+        pDer.classList.add('abrir-der');
+        setTimeout(() => {
+            pSobre.classList.add('desvanecer');
+            inv.classList.add('aparecer');
+            // Animar esquinas del hero en secuencia
+            setTimeout(() => {
+                document.querySelectorAll('.branch').forEach((el, i) => {
+                    setTimeout(() => el.classList.add('visible'), i * 280);
+                });
+            }, 200);
+            setTimeout(() => {
+                pSobre.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                initScrollReveal();
+            }, 1200);
+        }, 860);
+    });
+
+    /* ── URL PARAMS ────── */
+    const p = new URLSearchParams(window.location.search);
+    const n = p.get('n'), ps = p.get('p');
+    if (n) {
+        const nl = n.replace(/-/g,' ');
+        document.getElementById('inputNombre').value = nl;
+        document.getElementById('mensajeBienvenida').innerText = `¡Hola ${nl}! Qué alegría que estés aquí.`;
+    }
+    if (ps) {
+        const inp = document.getElementById('inputCantidad');
+        inp.max = ps; inp.value = ps;
+        document.getElementById('labelMax').innerText = `de ${ps} pases reservados`;
+    }
+
+    /* ── CUENTA REGRESIVA ─ */
+    const boda = new Date('October 14, 2026 16:30:00').getTime();
+    const ids  = ['days','hours','minutes','seconds'];
+    function tick() {
+        const d = boda - Date.now();
+        if (d <= 0) return;
+        [Math.floor(d/86400000), Math.floor((d%86400000)/3600000),
+         Math.floor((d%3600000)/60000), Math.floor((d%60000)/1000)]
+        .forEach((v,i) => {
+            const el = document.getElementById(ids[i]);
+            const s  = String(v).padStart(2,'0');
+            if (el.innerText !== s) { el.classList.add('tick'); el.innerText = s; setTimeout(() => el.classList.remove('tick'), 200); }
+        });
+    }
+    tick(); setInterval(tick, 1000);
+
+    /* ── MODAL RSVP ─────── */
+    const modal   = document.getElementById('modal-rsvp');
+    const cerrar  = document.getElementById('modalCerrar');
+    const back    = document.getElementById('modalBackdrop');
+    const b1      = document.getElementById('btnAbrirModal');
+    const b2      = document.getElementById('btnAbrirModal2');
+
+    function abrirModal()  { modal.classList.add('abierto'); document.body.style.overflow = 'hidden'; }
+    function cerrarModal() { modal.classList.remove('abierto'); document.body.style.overflow = 'auto'; }
+
+    b1.addEventListener('click', abrirModal);
+    b2.addEventListener('click', abrirModal);
+    cerrar.addEventListener('click', cerrarModal);
+    back.addEventListener('click', cerrarModal);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') cerrarModal(); });
+
+    /* ── RSVP LÓGICA ────── */
+    const btnSi = document.getElementById('btnAsistir');
+    const btnNo = document.getElementById('btnNoAsistir');
+    const val   = document.getElementById('valorAsistencia');
+    const sec   = document.getElementById('seccionInvitados');
+
+    btnSi.onclick = () => { val.value='SI'; btnSi.classList.add('activo-si'); btnNo.classList.remove('activo-no'); sec.classList.remove('hidden'); };
+    btnNo.onclick = () => { val.value='NO'; btnNo.classList.add('activo-no'); btnSi.classList.remove('activo-si'); sec.classList.add('hidden'); };
+
+    document.getElementById('rsvpForm').onsubmit = async (e) => {
+        e.preventDefault();
+        if (!val.value) return alert('Selecciona tu asistencia');
+        const btn = document.getElementById('btnEnviar');
+        btn.innerText = 'ENVIANDO...'; btn.disabled = true;
+        const data = Object.fromEntries(new FormData(e.target).entries());
+        try {
+            const res = await fetch('https://sheetdb.io/api/v1/mtnhnv7jyyebe', {
+                method: 'POST', headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ data: [data] })
+            });
+            if (res.ok) { e.target.classList.add('hidden'); document.getElementById('mensajeExito').classList.remove('hidden'); }
+            else throw new Error();
+        } catch {
+            alert('Error al enviar, intenta de nuevo.');
+            btn.innerText = 'Enviar Confirmación'; btn.disabled = false;
+        }
+    };
+
+    /* ── CARRUSEL ───────── */
+    const track  = document.getElementById('carouselTrack');
+    const dotsW  = document.getElementById('carouselDots');
+    const slides = track ? [...track.querySelectorAll('.slide')] : [];
+    let cur = 0, auto = null;
+
+    if (slides.length > 0) {
+        slides.forEach((_, i) => {
+            const d = document.createElement('div');
+            d.className = 'dot' + (i === 0 ? ' activo' : '');
+            d.addEventListener('click', () => { goTo(i); resetAuto(); });
+            dotsW.appendChild(d);
+        });
+        function goTo(i) {
+            cur = ((i % slides.length) + slides.length) % slides.length;
+            track.style.transform = `translateX(-${cur * 100}%)`;
+            dotsW.querySelectorAll('.dot').forEach((d,j) => d.classList.toggle('activo', j === cur));
+        }
+        document.getElementById('carouselPrev').onclick = () => { goTo(cur-1); resetAuto(); };
+        document.getElementById('carouselNext').onclick = () => { goTo(cur+1); resetAuto(); };
+        let tx = 0;
+        track.addEventListener('touchstart', e => tx = e.touches[0].clientX, {passive:true});
+        track.addEventListener('touchend',   e => { const dx = tx - e.changedTouches[0].clientX; if (Math.abs(dx) > 40) { goTo(dx > 0 ? cur+1 : cur-1); resetAuto(); } }, {passive:true});
+        function startAuto() { auto = setInterval(() => goTo(cur+1), 4500); }
+        function resetAuto() { clearInterval(auto); startAuto(); }
+        startAuto();
+    }
+
+    /* ── SCROLL REVEAL ──── */
+    function initScrollReveal() {
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('visible'); obs.unobserve(en.target); } });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    }
+});
+</script>
 </body>
 </html>
-
