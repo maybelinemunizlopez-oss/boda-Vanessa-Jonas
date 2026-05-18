@@ -66,13 +66,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const b1      = document.getElementById('btnAbrirModal');
     const b2      = document.getElementById('btnAbrirModal2');
 
-    function abrirModal()  { modal.classList.add('abierto'); document.body.style.overflow = 'hidden'; }
-    function cerrarModal() { modal.classList.remove('abierto'); document.body.style.overflow = 'auto'; }
+    function abrirModal()  { if (modal) { modal.classList.add('abierto'); document.body.style.overflow = 'hidden'; } }
+    function cerrarModal() { if (modal) { modal.classList.remove('abierto'); document.body.style.overflow = 'auto'; } }
 
-    b1.addEventListener('click', abrirModal);
-    b2.addEventListener('click', abrirModal);
-    cerrar.addEventListener('click', cerrarModal);
-    back.addEventListener('click', cerrarModal);
+    if (b1) b1.addEventListener('click', abrirModal);
+    if (b2) b2.addEventListener('click', abrirModal);
+    if (cerrar) cerrar.addEventListener('click', cerrarModal);
+    if (back) back.addEventListener('click', cerrarModal);
     document.addEventListener('keydown', e => { if (e.key === 'Escape') cerrarModal(); });
 
     /* ── RSVP LÓGICA ────── */
